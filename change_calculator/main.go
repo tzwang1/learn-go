@@ -16,6 +16,9 @@ func read_int_input(reader *bufio.Reader) int {
 	}
 	text = strings.TrimSuffix(text, "\n")
 	num, err := strconv.Atoi(text)
+	if err != nil {
+		log.Fatalf("Could not convert %s to int", text)
+	}
 	return num
 }
 
